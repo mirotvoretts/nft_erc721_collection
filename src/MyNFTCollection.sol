@@ -26,7 +26,7 @@ contract MyNFTCollection is ERC721, Ownable {
     {}
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://bafybeib4ddjm7xerztvbiifcrhsfraw45zosc5czckrxipvunkyjha2y6q/";
+        return "ipfs://bafybeiaxgymouylj3cln37payudjatwxejz4wziawdighnrpujahaerlya/";
     }
 
     function validateMint(uint256 amount, address recipient) internal {

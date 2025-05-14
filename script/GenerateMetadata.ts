@@ -54,15 +54,20 @@ function selectRandomAttribute(options: { name: string, probability: number }[])
   return options[0].name;
 }
 
+function formatTokenId(tokenId: number): string {
+  return tokenId.toString().padStart(4, '0');
+}
+
 if (!existsSync(CONFIG.outputFolder)) {
   mkdirSync(CONFIG.outputFolder);
 }
 
 for (let tokenId = 1; tokenId <= CONFIG.totalSupply; tokenId++) {
+  const formattedTokenId = formatTokenId(tokenId);
   const metadata: Metadata = {
     name: `${CONFIG.collectionName} #${tokenId}`,
     description: CONFIG.description,
-    image: `${CONFIG.baseImageURI}${tokenId}.png`, // Предполагается формат 1.png, 2.png и т.д.
+    image: `${CONFIG.baseImageURI}bear-${formattedTokenId}.png`, // Изменено здесь
     attributes: [
       {
         trait_type: "Clothes",
@@ -81,7 +86,7 @@ for (let tokenId = 1; tokenId <= CONFIG.totalSupply; tokenId++) {
 
   const filename = join(CONFIG.outputFolder, `${tokenId}.json`);
   writeFileSync(filename, JSON.stringify(metadata, null, 2));
-  console.log(`Generated metadata for token #${tokenId}`);
+  console.log(`Generated metadata for token #${tokenId} (bear-${formattedTokenId}.png)`);
 }
 
 console.log(`Output folder: ${CONFIG.outputFolder}`);
