@@ -72,3 +72,6 @@ forge test
 - Проверка лимитов
 - Тесты withdraw
 
+## Ссылки
+- Изображения: [IPFS](https://ipfs.io/ipfs/Qmb8Guy7sL3i3GWKxaP62m98r8FgMQYoxnpapTmotCDzu1)
+- Метаданные: [IPFS](https://ipfs.io/ipfs/bafybeib4ddjm7xerztvbiifcrhsfraw45zosc5czckrxipvunkyjha2y6q/)
