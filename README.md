@@ -16,6 +16,7 @@
 - **Язык**: Solidity 0.8.28
 - **Фреймворк**: Foundry
 - **Библиотеки**: OpenZeppelin Contracts
+- **Контракт**: [`0xd92571bf259c5db67bc85a52f90ccfbd15730cfe`](https://sepolia.etherscan.io/address/0xd92571bf259c5db67bc85a52f90ccfbd15730cfe)
 
 ## Функционал
 
