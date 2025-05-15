@@ -3,6 +3,7 @@ pragma solidity ^0.8.28;
 
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract MyNFTCollection is ERC721, Ownable {
     error InvalidAmount();
@@ -12,7 +13,7 @@ contract MyNFTCollection is ERC721, Ownable {
     error TransferFailed();
     error ZeroAddress();
     
-    uint256 private _nextTokenId;
+    uint256 private _nextTokenId = 1;
     uint256 public constant MAX_SUPPLY = 100;
     uint256 public constant MINT_PRICE = 0.001 ether;
     uint256 public constant MAX_PER_TX = 3;
@@ -27,6 +28,10 @@ contract MyNFTCollection is ERC721, Ownable {
 
     function _baseURI() internal pure override returns (string memory) {
         return "ipfs://bafybeiaxgymouylj3cln37payudjatwxejz4wziawdighnrpujahaerlya/";
+    }
+
+    function tokenURI(uint256 tokenId) public pure override returns (string memory) {
+        return string(abi.encodePacked(_baseURI(), Strings.toString(tokenId), ".json"));
     }
 
     function validateMint(uint256 amount, address recipient) internal {
@@ -45,10 +50,10 @@ contract MyNFTCollection is ERC721, Ownable {
     }
 
     function withdraw(uint256 amount, address payable recipient) external onlyOwner {
-        require(0 < amount && amount <= address(this).balance, InvalidAmount());
-        require(recipient != address(0), ZeroAddress());
+        require(0 < amount && amount <= address(this).balance, "Invalid amount");
+        require(recipient != address(0), "Zero address");
         (bool success, ) = recipient.call{value: amount}("");
-        require(success, TransferFailed());
+        require(success, "Transfer failed");
     }
 
     function totalSupply() external view returns (uint256) {
