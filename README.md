@@ -59,7 +59,7 @@ npm install @pinata/sdk
 ts-node script/GenerateMetadata.ts
 ```
 
-> Далее загружаете метаданные на IPFS и делаете деплой
+> Далее загружаете метаданные на IPFS и делаете деплой. Для загрузки метаданных я использовал [Pinata](https://app.pinata.cloud/), деплой делал через [Remix](https://remix.ethereum.org/) (flatten делал тоже в Remix)
 
 ## Тестирование
 

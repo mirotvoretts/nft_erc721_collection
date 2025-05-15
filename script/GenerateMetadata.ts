@@ -62,12 +62,12 @@ if (!existsSync(CONFIG.outputFolder)) {
   mkdirSync(CONFIG.outputFolder);
 }
 
-for (let tokenId = 1; tokenId <= CONFIG.totalSupply; tokenId++) {
+for (let tokenId = 0; tokenId < CONFIG.totalSupply; tokenId++) {
   const formattedTokenId = formatTokenId(tokenId);
   const metadata: Metadata = {
     name: `${CONFIG.collectionName} #${tokenId}`,
     description: CONFIG.description,
-    image: `${CONFIG.baseImageURI}bear-${formattedTokenId}.png`, // Изменено здесь
+    image: `${CONFIG.baseImageURI}bear-${formattedTokenId}.png`,
     attributes: [
       {
         trait_type: "Clothes",
