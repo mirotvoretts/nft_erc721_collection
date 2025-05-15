@@ -50,13 +50,13 @@ contract MyNFTCollection is ERC721, Ownable {
     }
 
     function withdraw(uint256 amount, address payable recipient) external onlyOwner {
-        require(0 < amount && amount <= address(this).balance, "Invalid amount");
-        require(recipient != address(0), "Zero address");
+        require(0 < amount && amount <= address(this).balance, InvalidAmount());
+        require(recipient != address(0), ZeroAddress());
         (bool success, ) = recipient.call{value: amount}("");
         require(success, "Transfer failed");
     }
 
     function totalSupply() external view returns (uint256) {
-        return _nextTokenId;
+        return _nextTokenId - 1;
     }
 }
