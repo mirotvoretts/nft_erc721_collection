@@ -1,12 +1,5 @@
 # Ursa Pixels :: NFT Collection 
 
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)  
-[![Solidity](https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white)](https://soliditylang.org/)  
-[![Foundry](https://img.shields.io/badge/Foundry-F76802?style=for-the-badge&logo=ethereum&logoColor=white)](https://getfoundry.sh/)  
-[![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)](https://ethereum.org/)  
-[![IPFS](https://img.shields.io/badge/IPFS-65C2CB?style=for-the-badge&logo=ipfs&logoColor=white)](https://ipfs.tech/)  
-[![OpenZeppelin](https://img.shields.io/badge/OpenZeppelin-4E5EE4?style=for-the-badge&logo=OpenZeppelin&logoColor=white)](https://openzeppelin.com/)  
-
 A collection of pixelated bears implemented using the **ERC721** standard.
 
 ## Technical Details
